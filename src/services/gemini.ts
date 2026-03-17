@@ -45,7 +45,8 @@ Every scenario or assessment you generate must include:
 export type ConsoleMode = 'audit' | 'develop';
 
 export async function generateAuditAssessment(input: string, mode: ConsoleMode = 'audit') {
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY as string;
+  const ai = new GoogleGenAI({ apiKey });
   
   const modeInstruction = mode === 'audit' 
     ? "TASK: Review and audit the provided BCP test results or incident data. Identify non-conformities, security gaps, and compliance risks relative to ISO 27001:2022 and ISO 22301:2019."
