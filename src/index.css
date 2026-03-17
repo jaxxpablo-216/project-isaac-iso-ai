@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "JetBrains Mono", "Fira Code", "Calibri", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-serif: "Georgia", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0A0A0B] text-[#E4E3E0] antialiased;
+  }
+}
+
+/* Custom scrollbar for that console feel */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #141414;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F27D26;
+}
