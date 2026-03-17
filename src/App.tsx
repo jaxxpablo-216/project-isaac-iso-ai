@@ -62,7 +62,8 @@ export default function App() {
       }
     } catch (err) {
       console.error(err);
-      setError('Failed to generate assessment. Please check your connection and try again.');
+      const msg = err instanceof Error ? err.message : String(err);
+      setError(`Assessment failed: ${msg}`);
     } finally {
       setIsGenerating(false);
     }

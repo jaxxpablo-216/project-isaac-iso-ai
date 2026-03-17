@@ -61,7 +61,7 @@ export async function generateAuditAssessment(input: string, mode: ConsoleMode =
     8. LOGISTICAL DETAILS: Transportation to alternate sites, WFH token activation, and communication cascade steps.`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-3.1-pro-preview",
+    model: "gemini-2.0-flash",
     contents: [{ role: "user", parts: [{ text: input }] }],
     config: {
       systemInstruction: `${SYSTEM_INSTRUCTION}\n\n${modeInstruction}`,
